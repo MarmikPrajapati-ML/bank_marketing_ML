@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Marketing Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Bank Marketing Prediction</h1>
+        <form method="POST" action="/predictdata">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="age">Age</label>
+                    <input type="number" class="form-control" id="age" name="age" min="18" max="100" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="job">Job</label>
+                    <select class="form-control" id="job" name="job" required>
+                        <option value="">Select...</option>
+                        <option value="admin.">Admin</option>
+                        <option value="blue-collar">Blue-collar</option>
+                        <option value="entrepreneur">Entrepreneur</option>
+                        <option value="housemaid">Housemaid</option>
+                        <option value="management">Management</option>
+                        <option value="retired">Retired</option>
+                        <option value="self-employed">Self-employed</option>
+                        <option value="services">Services</option>
+                        <option value="student">Student</option>
+                        <option value="technician">Technician</option>
+                        <option value="unemployed">Unemployed</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="marital">Marital Status</label>
+                    <select class="form-control" id="marital" name="marital" required>
+                        <option value="">Select...</option>
+                        <option value="divorced">Divorced</option>
+                        <option value="married">Married</option>
+                        <option value="single">Single</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="education">Education</label>
+                    <select class="form-control" id="education" name="education" required>
+                        <option value="">Select...</option>
+                        <option value="basic.4y">Basic 4y</option>
+                        <option value="basic.6y">Basic 6y</option>
+                        <option value="basic.9y">Basic 9y</option>
+                        <option value="high.school">High School</option>
+                        <option value="illiterate">Illiterate</option>
+                        <option value="professional.course">Professional Course</option>
+                        <option value="university.degree">University Degree</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="default">Default</label>
+                    <select class="form-control" id="default" name="default" required>
+                        <option value="">Select...</option>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="housing">Housing Loan</label>
+                    <select class="form-control" id="housing" name="housing" required>
+                        <option value="">Select...</option>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="loan">Personal Loan</label>
+                    <select class="form-control" id="loan" name="loan" required>
+                        <option value="">Select...</option>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="contact">Contact</label>
+                    <select class="form-control" id="contact" name="contact" required>
+                        <option value="">Select...</option>
+                        <option value="cellular">Cellular</option>
+                        <option value="telephone">Telephone</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="month">Month</label>
+                    <select class="form-control" id="month" name="month" required>
+                        <option value="">Select...</option>
+                        <option value="jan">January</option>
+                        <option value="feb">February</option>
+                        <option value="mar">March</option>
+                        <option value="apr">April</option>
+                        <option value="may">May</option>
+                        <option value="jun">June</option>
+                        <option value="jul">July</option>
+                        <option value="aug">August</option>
+                        <option value="sep">September</option>
+                        <option value="oct">October</option>
+                        <option value="nov">November</option>
+                        <option value="dec">December</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="day_of_week">Day of the Week</label>
+                    <select class="form-control" id="day_of_week" name="day_of_week" required>
+                        <option value="">Select...</option>
+                        <option value="mon">Monday</option>
+                        <option value="tue">Tuesday</option>
+                        <option value="wed">Wednesday</option>
+                        <option value="thu">Thursday</option>
+                        <option value="fri">Friday</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="campaign">Campaign</label>
+                    <input type="number" class="form-control" id="campaign" name="campaign" min="1" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="pdays">Pdays</label>
+                    <input type="number" class="form-control" id="pdays" name="pdays" min="0" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="previous">Previous</label>
+                    <input type="number" class="form-control" id="previous" name="previous" min="0" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="poutcome">Poutcome</label>
+                    <select class="form-control" id="poutcome" name="poutcome" required>
+                        <option value="">Select...</option>
+                        <option value="failure">Failure</option>
+                        <option value="nonexistent">Nonexistent</option>
+                        <option value="success">Success</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="emp_var_rate">Employment Variation Rate</label>
+                    <input type="number" step="0.01" class="form-control" id="emp_var_rate" name="emp_var_rate" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="cons_price_idx">Consumer Price Index</label>
+                    <input type="number" step="0.01" class="form-control" id="cons_price_idx" name="cons_price_idx" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="cons_conf_idx">Consumer Confidence Index</label>
+                    <input type="number" step="0.01" class="form-control" id="cons_conf_idx" name="cons_conf_idx" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="euribor3m">Euribor 3 Month Rate</label>
+                    <input type="number" step="0.01" class="form-control" id="euribor3m" name="euribor3m" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="nr_employed">Number of Employees</label>
+                    <input type="number" step="0.01" class="form-control" id="nr_employed" name="nr_employed" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+        {% if results is not none %}
+        <div class="mt-4">
+            <h3>Prediction Result: {{ 'Will Deposit' if results == 1 else 'Will Not Deposit' }}</h3>
+        </div>
+        {% endif %}
+        {% if error %}
+        <div class="mt-4 text-danger">
+            <h3>Error: {{ error }}</h3>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
