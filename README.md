@@ -1,6 +1,6 @@
 # Bank Marketing Prediction Project
 
-Screenshot.png
+![Screenshot](Screenshot.png)
 
 ## Overview
 This project aims to predict whether a client will subscribe to a bank term deposit based on various client and campaign attributes. It utilizes machine learning techniques to analyze a dataset enriched with social and economic context attributes.
